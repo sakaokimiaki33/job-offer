@@ -1,0 +1,260 @@
+$basic-color:rgb(96, 93, 255);
+$font-color:white;
+
+@mixin basePadding($padding: 10px) {
+  padding: $padding;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Unica+One);
+
+$accent: #57C3E9;
+$black: #292929;
+$dark: #666;
+$darkGray: #999999;
+$gray: #D8D8D8;
+$lightGray: #f5f5f3;
+$white: white;
+
+@mixin list() {
+  width:150px;
+  height: 150px;
+  background-color: $basic-color;
+  border-radius: 5px;
+  position: fixed;
+  right:50px;
+  z-index: 500;
+}
+
+@mixin list_p() {
+  color: $font-color;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 80px;
+}
+
+.header {
+  width: 100%;
+  max-width: 1360px;
+  font-size: 16px;
+  padding: 16px 40px;
+  margin: 0 auto;
+  background-color: gray;
+
+  .btn {
+    @include basePadding(8px 20px);
+    font-size: 14px;
+    border: 2px solid $accent;
+    color: $accent;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 3px;
+    display: inline-block;
+  &:hover {
+    border-color: lighten($accent, 15%);
+    color: lighten($accent, 15%);
+  }
+}
+
+  &__menu {
+    width: 100%;
+    
+    font-size: 0.9rem;
+    padding: 8px 0;
+    display: flex;
+      justify-content: space-between;
+
+    &__category {
+      display: flex;
+        flex-direction: row;
+
+      p {padding: 0 8px;}
+    }
+
+    &__devise {
+      display: flex;
+        flex-direction: row;
+
+        p {padding: 0 8px;}
+    }
+  }
+}
+.search-form {
+  text-align: center;
+  padding-top: 5px;
+  .search-input {
+    width: 70%;
+    margin-right: 10px;
+    height: 30px;
+    border-radius: 5px;
+  }
+
+  .search-btn {
+    width: 5%;
+    border-radius: 5px;
+  }
+}
+
+.wrapper{
+  width: 100%;
+  height: 100%;
+}
+
+table{
+  width: 80%;
+  max-width: 960px;
+  border-collapse:separate;
+  border-spacing: 0;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+table th:first-child{
+  border-radius: 5px 0 0 0;
+}
+
+table th:last-child{
+  border-radius: 0 5px 0 0;
+  border-right: 1px solid #3c6690;
+}
+
+table th{
+  text-align: center;
+  color:white;
+  background: linear-gradient(#829ebc,#225588);
+  border-left: 1px solid #3c6690;
+  border-top: 1px solid #3c6690;
+  border-bottom: 1px solid #3c6690;
+  box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
+  width: 1%;
+  padding: 10px 0;
+}
+
+table td{
+  text-align: center;
+  border-left: 1px solid #a8b7c5;
+  border-bottom: 1px solid #a8b7c5;
+  border-top:none;
+  box-shadow: 0px -3px 5px 1px #eee inset;
+  width: 1%;
+  padding: 10px 0;
+}
+
+table td:last-child{
+  border-right: 1px solid #a8b7c5;
+}
+
+table tr:last-child td:first-child {
+  border-radius: 0 0 0 5px;
+}
+
+table tr:last-child td:last-child {
+  border-radius: 0 0 5px 0;
+}
+
+.part_download{
+  height: 400px;
+  width: 100%;
+  background-color: gray;
+  background-size: cover;
+  position: relative;
+  .font_size{
+    font-size: 22px;
+    padding: 120px 0 20px;
+  }
+  p{
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 5px rgb(51, 51, 51);
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .margin_bottom{
+    margin-bottom: 70px;
+  }
+  .list{
+    position: absolute;
+    bottom: 30%;
+    left: 35%;
+  }
+}
+
+.footer{
+  height: 200px;
+  width: 100%;
+  background-color: rgb(91, 151, 201);
+  position: relative;
+  &__menus{
+    display: flex;
+    justify-content: center;
+    &__menu{
+      margin: 40px 30px 20px;
+      h1{
+        font-size: 18px;
+        color: $font-color;
+      }
+      ul{
+        margin: 40px 0 20px;
+        li{
+          margin-bottom: 10px;
+          a{
+            color: $font-color;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  &__logo{
+    display: flex;
+    justify-content: center;
+  }
+  p{
+    color: $font-color;
+    padding-top: 3px;
+    justify-content: center;
+    display: flex;
+    font-size: 14px;
+  }
+}
+
+.create{
+  width:100px;
+  height: 100px;
+  background-color: $basic-color;
+  border-radius: 5px;
+  position: fixed;
+  right:50px;
+  z-index: 500;
+  bottom:  50px;
+  p{
+    color:      $font-color;
+    font-size:  16px;
+    margin: 10px 0 0 15px;
+  }
+  img{
+    margin: 10px 0 0 24px;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1360px;
+  font-size: 16px;
+  padding: 16px 40px;
+  margin: 0 auto;
+  background-color: gray;
+
+  &__const {
+    width: 100%;
+    display: flex;
+      flex-direction: row;
+      &__title{
+        margin: 0 auto;
+        p{
+          font-size: 40px;
+          color: white;
+          font-weight: bold;
+        }
+      }
+  }
+}

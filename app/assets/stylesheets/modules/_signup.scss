@@ -1,0 +1,178 @@
+@mixin Form_Name {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+@mixin required {
+  color: #ffffff;
+  background-color: lighten(#ff3300, 10%);
+  font-size: 0.6rem;
+  padding: 3px;
+}
+
+@mixin Form_Input {
+  width: 300px;
+  height: 30px;
+  border: solid 1px #eeeeee;
+  margin: 6px 0 20px;
+  display: block;
+}
+
+.Wrapper {
+  background-image: image-url("material/pict/bg-mainVisual-pict_pc.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 1000px;
+
+  .Sign-Up {
+    background-color: rgba(250,250,250,0.2);
+    width: 690px;
+    margin: 0 auto;
+
+    &__Regist-Form {
+      display: flex;
+        flex-direction: row;
+
+      &__User {
+        width: 320px;
+        padding: 0px 0 0px 10px;
+
+        h2 {
+          font-size: 1.0rem;
+          font-weight: bold;
+          text-align: center;
+          margin: 1.5em;
+        }
+
+        &--Input {
+          @include Form_Name;
+        }
+
+        &--Font-Small {
+          font-size: 0.6rem;
+          font-weight: normal;
+        }
+    
+        &--Required {
+          @include required;
+        }
+
+        &--Img {
+          @include Form_Input;
+          border: none;
+        }
+      
+        &--Company_Name {
+          @include Form_Input;
+          width: 150px;
+        }
+      
+        &--Company_Name_Kana {
+          @include Form_Input;
+          width: 150px;
+        }
+      
+        &--Business_Content {
+          @include Form_Input;
+          width: 150px;
+        }
+      
+        &--Staff_Name {
+          @include Form_Input;
+          width: 150px;
+        }
+
+        &--Staff_Name_Kana {
+          @include Form_Input;
+          width: 150px;
+        }
+
+        &--Faxphone {
+          @include Form_Input;
+          
+        }
+      
+        &--Phone {
+          @include Form_Input;
+          
+        }
+      
+        &--Email {
+          @include Form_Input;
+        }
+
+        &--Url {
+          @include Form_Input;
+        }
+      
+        &--Password {
+          @include Form_Input;
+        }
+      }
+
+      &__Address {
+        width: 320px;
+        padding: 0px 0 0px 30px;
+
+        h2 {
+          font-size: 1.0rem;
+          font-weight: bold;
+          text-align: center;
+          margin: 1.5em;
+        }
+
+        &__Input {
+          font-size: 0.8rem;
+          @include Form_Name;
+        }
+    
+        &--Font-Small {
+          font-size: 0.6rem;
+          font-weight: normal;
+        }
+    
+        &--Required {
+          @include required;
+        }
+
+        &--Company_Name_Deliver {
+          @include Form_Input;
+          width: 150px;
+        }
+    
+        &--Postal_Code {
+          @include Form_Input;
+        }
+    
+        &--Prefecture {
+          @include Form_Input;
+        }
+    
+        &--City {
+          @include Form_Input;
+        }
+    
+        &--Block {
+          @include Form_Input;
+        }
+    
+        &--Building {
+          @include Form_Input;
+        }
+      }
+    }
+
+    &__Submit {
+      &--btn {
+        background-color: #3ccace;
+        color: #ffffff;
+        width: 670px;
+        height: 40px;
+        border: none;
+        margin:10px 0 0 10px;
+        cursor: pointer;
+        display: block;
+      }
+    }
+  }
+}

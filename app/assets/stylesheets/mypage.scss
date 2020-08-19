@@ -1,0 +1,58 @@
+.mypage {
+  margin: 0 auto;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  background-color: #f8f8f8;
+  .sidebar {
+    width: 25%;
+    height: 80vh;
+    overflow: scroll;
+    .section {
+      margin: 0 auto;
+      padding-top: 40px;
+      width: 200px;
+      &__titile {
+        font-size: 1em;
+      }
+      &__group {
+        list-style: none;
+        padding: 0;
+        margin: 20px auto;
+        &__list {
+          background-color: white;
+          &__text {
+            font-size: 1em;
+            border: lightgray solid 1px;
+            color: rgb(39,39,39);
+            padding: 10px 30px;
+          }
+        }
+        &__list:hover {
+          background-color: #f8f8f8;
+        }
+      }
+    }
+  }
+  .main {
+    width: 75%;
+    height: 80vh;
+    overflow: scroll;
+    &__contents {
+      width: 75%;
+      height: 500px;
+      margin: 0 auto;
+      padding-top: 40px;
+      &__text {
+        text-align: center;
+        padding-bottom: 40px;
+      }
+      &__inner {
+        text-align: center;
+        line-height: 300px;
+        background-color: white;
+        outline:lightgray solid 1px;
+      }
+    }
+  }
+}

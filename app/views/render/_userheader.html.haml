@@ -1,0 +1,11 @@
+.header
+  .header__search
+    .header__search__title
+      = link_to root_path do
+        %p JOB-OFFER
+    %form.header__search__form
+      %input{type: 'search', class: 'header__search__form__input', placeholder: '検索するキーワードを入力して下さい。'}
+      %input{type: 'search', class: 'header__search__form__input', placeholder: '勤務地'}
+      %input{type: 'search', class: 'header__search__form__input', placeholder: '職種'}
+      = button_tag type: 'submit', class: 'header__search__form__submit' do
+        -# = image_tag 'material/icon/icon-search1.png', class: 'header__search__form__submit--image'

@@ -1,0 +1,115 @@
+= render partial: "render/header"
+
+.Wrapper
+  .Sign-Up
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |form|
+      .Sign-Up__Regist-Form
+        .Sign-Up__Regist-Form__User
+          %h2 【ユーザー情報 新規登録フォーム】
+
+          %p.Sign-Up__Regist-Form__User--Input プロフィール画像
+          = form.file_field :user_img, class: 'Sign-Up__Regist-Form__User--Img'
+
+          %p.Sign-Up__Regist-Form__User--Input
+            ユーザー名
+            %span.Sign-Up__Regist-Form__User--Font-Small (全角)
+            %span.Sign-Up__Regist-Form__User--Required 必須
+          = form.text_field :company_name, class: 'Sign-Up__Regist-Form__User--Company_Name', placeholder: 'ユーザー名', autocomplete: "company_name", required: 'required'
+
+          %p.Sign-Up__Regist-Form__User--Input
+            ユーザー名
+            %span.Sign-Up__Regist-Form__User--Font-Small (フリガナ・全角)
+            %span.Sign-Up__Regist-Form__User--Required 必須
+          = form.text_field :company_name_kana, class: 'Sign-Up__Regist-Form__User--Company_Name_Kana', placeholder: 'ユーザー名（カナ）', required: 'required'
+
+          %p.Sign-Up__Regist-Form__User--Input
+            事業内容
+            %span.Sign-Up__Regist-Form__User--Required 必須
+          = form.text_field :business_content, class: 'Sign-Up__Regist-Form__User--Business_Content', placeholder: '事業内容', required: 'required'
+
+          %p.Sign-Up__Regist-Form__User--Input
+            担当者
+          = form.text_field :staff_name, class: 'Sign-Up__Regist-Form__User--Staff_Name', placeholder: '担当者名', required: 'required'
+
+          %p.Sign-Up__Regist-Form__User--Input
+            担当者(フリガナ)
+            %span.Sign-Up__Regist-Form__User--Font-Small (フリガナ・全角)
+          = form.text_field :staff_name_kana, class: 'Sign-Up__Regist-Form__User--Staff_Name_Kana', placeholder: '担当者名（カナ）', required: 'required'
+
+          %p.Sign-Up__Regist-Form__User--Input
+            FAX番号
+            %span.Sign-Up__Regist-Form__User--Font-Small (半角)
+          = form.telephone_field :faxphone, class: 'Sign-Up__Regist-Form__User--Faxphone', placeholder: 'FAX番号'
+
+          %p.Sign-Up__Regist-Form__User--Input
+            電話番号
+            %span.Sign-Up__Regist-Form__User--Font-Small (半角)
+            %span.span.Sign-Up__Regist-Form__User--Required 必須
+          = form.telephone_field :phone, class: 'Sign-Up__Regist-Form__User--Phone', placeholder: '電話番号'
+
+          %p.Sign-Up__Regist-Form__User--Input
+            メールアドレス
+            %span.Sign-Up__Regist-Form__User--Required 必須
+          = form.email_field :email, class: 'Sign-Up__Regist-Form__User--Email', placeholder: 'メールアドレス', autocomplete: "email", required: 'required'
+
+          %p.Sign-Up__Regist-Form__User--Input
+            URL
+            %span.Sign-Up__Regist-Form__User
+          = form.email_field :URL, class: 'Sign-Up__Regist-Form__User--Url', placeholder: 'URL', autocomplete: "URL"
+
+          %p.Sign-Up__Regist-Form__User--Input
+            パスワード
+            %span.Sign-Up__Regist-Form__User--Required 必須
+          = form.password_field :password, class: 'Sign-Up__Regist-Form__User--Password', placeholder: 'パスワード', required: 'required'
+
+          %p.Sign-Up__Regist-Form__User--Input
+            パスワード
+            %span.Sign-Up__Regist-Form__User--Font-Small (確認用)
+            %span.Sign-Up__Regist-Form__User--Required 必須
+          = form.password_field :password_confirmation, class: 'Sign-Up__Regist-Form__User--Password', placeholder: 'パスワード（確認用）', required: 'required'
+
+        .Sign-Up__Regist-Form__Address
+          %h2 【住所】
+
+          = form.fields_for :address, @user.build_address do |form_address|
+            
+            %p.Sign-Up__Regist-Form__Address__Input
+              企業名
+              %span.Sign-Up__Regist-Form__Address--Font-Small (全角)
+              %span.Sign-Up__Regist-Form__Address--Required 必須
+            = form_address.text_field :company_name_deliver, class: 'Sign-Up__Regist-Form__Address--Company_Name_Deliver', placeholder: '企業名', autocomplete: "Company_name_deliver", required: 'required'
+
+            %p.Sign-Up__Regist-Form__Address__Input
+              郵便番号
+              %span.Sign-Up__Regist-Form__Address--Font-Small (半角)
+              %span.Sign-Up__Regist-Form__Address--Required 必須
+            = form_address.number_field :postal_code, class: 'Sign-Up__Regist-Form__Address--Postal_Code', placeholder: '番号', autocomplete: "postal-code", required: 'required'
+
+            %p.Sign-Up__Regist-Form__Address__Input
+              住所
+              %span.Sign-Up__Regist-Form__Address--Font-Small（都道府県）
+              %span.Sign-Up__Regist-Form__Address--Required 必須
+            = form_address.select :prefecture, Address.prefectures.keys, {prompt: '選択してください'}, class: 'Sign-Up__Regist-Form__Address--Prefecture', required: 'required'
+
+            %p.Sign-Up__Regist-Form__Address__Input
+              住所
+              %span.Sign-Up__Regist-Form__Address--Font-Small（市区町村）
+              %span.Sign-Up__Regist-Form__Address--Required 必須
+            = form_address.text_field :city, class: 'Sign-Up__Regist-Form__Address--City', placeholder: '住所（市区町村）', autocomplete: "address-level2", required: 'required'
+
+            %p.Sign-Up__Regist-Form__Address__Input
+              住所
+              %span.Sign-Up__Regist-Form__Address--Required 必須
+            = form_address.text_field :block, class: 'Sign-Up__Regist-Form__Address--Block', placeholder: '住所', autocomplete: "address-level3", required: 'required'
+
+            %p.Sign-Up__Regist-Form__Address__Input
+              住所
+              %span.Sign-Up__Regist-Form__Address--Font-Small （マンション名・建物名）
+            = form_address.text_field :building, class: 'Sign-Up__Regist-Form__Address--Building', placeholder: '住所（マンション名・建物名）'
+
+            = devise_error_messages
+
+      .Sign-Up__Submit
+        = form.submit "新規登録", class: 'Sign-Up__Submit--btn' 
+
+= render partial: "render/footer"

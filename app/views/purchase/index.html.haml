@@ -1,0 +1,72 @@
+= render 'renderpage/header'
+
+.buyinfo
+  .buyinfo__content
+    %h2 投稿内容の確認
+    .buyinfo__content__item
+      .buyinfo__content__item--images
+        %img{:src => "#{@item.image}"}
+      .buyinfo__content__item--text
+        %p 
+        = @item.name
+        %p.buyinfo__content__item--text__form
+          送料込み
+          %span
+            - price = @item.price*1.1
+            = price.truncate
+            円(税込み)
+    .buyinfo__content__cost
+      .buyinfo__content__cost--price
+        %p 
+          支払い金額
+      .buyinfo__content__cost--pay
+        %span
+          - price = @item.price*1.1
+          = price.truncate
+          円(税込み)
+    .buyinfo__content__info
+      .buyinfo__content__info--cont
+        .buyinfo__content__info--cont--title
+          %h3 支払方法
+          - if @default_card_information.blank?
+            %br /
+          - else
+            -#以下カード情報を表示
+            = "**** **** **** " + @default_card_information.last4
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
+          .buyinfo__content__info--cont--link 
+            = link_to "#" do
+              %span 
+                変更する  ＞
+              
+        
+    .buyinfo__content__deliver
+      .buyinfo__content__deliver--inner
+        .buyinfo__content__deliver--inner--top
+          %h3 配送先
+          .buyinfo__content__deliver--inner--top--link
+            = link_to "edit_user_path" do
+              %span 
+                変更する  ＞
+              
+        %address.info__content__user
+          %p
+            = @address.postal_code
+          %p
+            = "#{@address.prefecture} #{@address.city} #{@address.block} #{@address.building}"
+          %p
+            = "#{@address.family_name_deliver} #{@address.name_deliver}"
+        
+      
+    .buyinfo__content__const
+      %p 
+        郵便局/コンビニ受取をご希望の方は、購入後に取引画面から受取場所を変更をすることが可能です。出品者が発送作業を開始した後は受取場所の変更ができませんので、早めに変更を行ってください。
+    .buyinfo__content__botan
+      = form_tag(action: :pay, method: :post) do
+        %button.buyinfo__content__const--btn 
+          購入する
+= render 'layouts/error_messages', model: f.object
+= render 'renderpage/footer'
+

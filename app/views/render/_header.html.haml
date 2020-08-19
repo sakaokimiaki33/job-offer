@@ -1,0 +1,27 @@
+.header
+  .header__search
+    .header__search__title
+      = link_to root_path do
+        %p JOB-OFFER
+        = form_with(url: search_jobs_path, local: true, method: :get, class: "search-form") do |form|
+          = form.text_field :keyword, placeholder: "キーワードを検索する", class: "search-input"
+          = form.submit "検索", class: "search-btn"
+        -# .contents.row
+        -#   - @jobs.each do |job|
+        -#     = render partial: "middle", locals: { job: job }
+
+  .header__menu
+    .header__menu__category
+      = link_to root_path do
+        %p 職種
+    .header__menu__devise
+      - if user_signed_in?
+        = link_to mypage_index_path do
+          %p マイページ
+        = link_to destroy_user_session_path, method: :delete do
+          %p ログアウト
+      - else
+        = link_to new_user_session_path do
+          %p ログイン
+        = link_to new_user_registration_path do
+          %p 新規登録

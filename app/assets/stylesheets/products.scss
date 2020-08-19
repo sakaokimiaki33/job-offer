@@ -1,0 +1,350 @@
+.products{
+  width: 100%;
+  &__main{
+    padding: 16px;
+    width: 660px;
+    margin: 0 auto;
+    font-size: 25px;
+    &__box{
+      padding: 16px;
+      height: 300px;
+    }
+    &__image {
+      font-weight: 600;
+      line-height: 1.4em;
+      display: flex;
+      padding: 0 16px;
+      &__side{
+        margin-left: 8px;
+        background-color: red;
+        color: white;
+        font-size: 15px;
+        padding: 0 4px;
+        border-radius: 2px;
+        font-weight: 600;
+        height: 32px;
+      }
+      &__detail{
+        margin-top: 5px;
+        font-size: 15px;
+        line-height: 1.4em;
+        width: 600px;
+        padding: 0 16px;
+      }
+      &__btn{
+        background-color: lightgray;
+        margin-top: 8px;
+        border-color: #bfbfbf;
+        height: 112px;
+        width: 600px;
+        position: relative;
+      }
+      &__content__btn{
+        background-color:  #999999;
+        width:20px;
+        position: absolute;
+        bottom: 380px;
+        right: 470px;
+      }
+    }
+    &__name {
+      font-weight: 600;
+      line-height: 1.4em;
+      padding: 16px;
+      align-items: center;
+      span {
+        margin-left: 8px;
+        background-color: red;
+        color: white;
+        font-size: 15px;
+        padding: 0 4px;
+        border-radius: 2px;
+        font-weight: 600;
+        line-height: 1.4em;
+      }
+      &__box{
+        height: 35px;
+        border: 1px solid #cccc;
+        border-radius: 4px;
+        box-sizing:border-box;
+        outline: none;
+        padding: 0 16px;
+        width: 100%;
+      }
+      select {
+        height: 35px;
+        border: 1px solid #cccc;
+        border-radius: 4px;
+        box-sizing:border-box;
+        outline: none;
+        padding: 0 16px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.post__drop__box__container{
+  display: block;
+  margin: 16px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  //プレビュー表示欄のCSS
+  .prev-content {
+    display: flex;
+    .preview-box {
+      height: 162px;
+      width: 112px;
+      margin: 0 15px 10px 0;
+      .upper-box {
+        height: 112px;
+        width: 100%;
+        img{
+          width: 112px;
+          height: 112px;
+        }
+      }
+      .lower-box {
+        display: flex;
+        text-align: center;
+        .delete-box {
+          color: #00b0ff;
+          width: 100%;
+          height: 50px;
+          line-height: 50px;
+          border: 1px solid #eee;
+          background: #f5f5f5;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  //投稿クリックエリアのCSS
+  .label-content{
+    margin-bottom: 10px;
+    width: 620px;
+    .label-box {
+      display: block;
+      border: 1px dashed #ccc;
+      position: relative;
+      background: #f5f5f5;
+      width: 100%;
+      height: 162px;
+      cursor: pointer;
+      &__text-visible {
+        position: absolute;
+        top: 50%;
+        left: 16px;
+        right: 16px;
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.5;
+        font-weight: bold;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        pointer-events: none;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+    }
+  }
+
+  //file_fieldのcss
+  .hidden-content {
+    .hidden-field {
+      display: none;
+    }
+    .hidden-checkbox {
+      display: none;
+    }
+  }
+}
+
+.error-message {
+  width: 660px;
+  margin: 0 auto;
+  ul {
+  }
+}
+//========================================
+
+
+.products__main__box2 {
+  padding: 16px;
+}
+
+.products__detail{
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4em;
+  color: grey;
+  margin: 20px;
+}
+.products__main__box3{
+  padding: 16px;
+}
+
+.products__detail__category{
+  font-weight: 600;
+  line-height: 1.4em;
+  padding: 16px;
+  align-items: center;
+  color: black;
+  &__side{
+    margin-left: 8px;
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    padding: 0 4px;
+    border-radius: 2px;
+    font-weight: 600;
+    line-height: 1.4em;
+    position: relative;
+  }
+  &__box{
+    height: 35px;
+    border: 1px solid #cccc;
+    border-radius: 4px;
+    box-sizing:border-box;
+    outline: none;
+    padding: 0 16px;
+    width: 500px;
+    position: absolute;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  span {
+    margin-left: 8px;
+    background-color: red;
+    color: white;
+    font-size: 15px;
+    padding: 0 4px;
+    border-radius: 2px;
+    font-weight: 600;
+    line-height: 1.4em;
+  }
+}
+
+
+
+
+.products__detail__brand{
+  &__side{
+    margin-left: 8px;
+    background-color:#bfbfbf;
+    color: #fff;
+    font-size: 16px;
+    padding: 0 4px;
+    border-radius: 2px;
+    font-weight: 600;
+    line-height: 1.4em;
+    display: inline;
+  }
+}
+.products__detail__status {
+  margin-top: 32px;
+  font-weight: 600;
+  line-height: 1.4em;
+  padding: 16px;
+  align-items: center;
+  display: flex;
+  color: black;
+  &__side{
+    margin-left: 8px;
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    padding: 0 4px;
+    border-radius: 2px;
+    font-weight: 600;
+    line-height: 1.4em;
+  }
+  &__box{
+    height: 35px;
+    border: 1px solid #cccc;
+    border-radius: 4px;
+    box-sizing:border-box;
+    outline: none;
+    padding: 0 16px;
+    width: 500px;
+    position: absolute;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+}
+
+.products__main__box6{
+  margin: 0px 16px 24px;
+  
+}
+.products__sell{
+  padding: 24px 0;
+  margin: auto;
+  width: 375px;
+  height: 50px;
+  text-align: center;
+  font-size: 30px;
+  
+}
+.products__sell__contents__btn--syutten{
+  width: 343px;
+  height: 50px;
+  background-color:#EA352D;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: all 0.3s ease-out 0s;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+  margin-bottom: 30px;
+  line-height: 50px;
+  font-size: 25px;
+}
+.products__sell__contents__btn--syutten:hover{
+  background-color: lightseagreen;
+}
+.products__draft{
+  padding: 24px 0;
+  display: flex;
+  margin: auto;
+  width: 375px;
+  height: 50px;
+  text-align: center;
+  font-size: 30px;
+}
+.products__sell__contents__btn--save{
+  background-color: #cccc;
+  border-color: transparent;
+  color: #222;
+  min-height: 48px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: all 0.3s ease-out 0s;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+  margin-bottom: 30px;
+  width: 343px;
+  height: 50px;
+  line-height: 50px;
+}
+.products__back{
+  margin-top: 24px;
+  width: 150px;
+  padding: 25px;
+  margin: 0 auto;
+  text-align: center;
+}
+.products__sell__contents__btn--back{
+  height: 20px;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  
+  color: #0095ee;
+  
+}

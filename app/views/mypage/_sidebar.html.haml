@@ -1,0 +1,38 @@
+.sidebar
+  .section
+    %h2.section_titile
+      マイページ
+    %ul.section__group
+      %li.section__group__list
+        =link_to mypage_index_path, class: "list-item" do
+          .section__group__list__text
+            お知らせ
+      %li.section__group__list
+        =link_to "#", class: "list-item" do
+          .section__group__list__text
+            いいね！
+      %li.section__group__list
+        =link_to "#", class: "list-item" do
+          .section__group__list__text
+            投降した求人
+      %li.section__group__list
+        =link_to "#", class: "list-item" do
+          .section__group__list__text
+            掲載期間が終了した求人
+      %li.section__group__list
+        =link_to "#", class: "list-item" do
+          .section__group__list__text
+            応募があった求人
+  .section
+    %h2.section_titile
+      設定
+    %ul.section__group
+      %li.section__group__list
+        =link_to edit_user_registration_path, class: "list-item" do
+          .section__group__list__text
+            登録情報変更
+      %li.section__group__list
+        =link_to destroy_user_session_path, method: :DELETE, class: "list-item" do
+          .section__group__list__text
+            ログアウト
+  

@@ -1,0 +1,55 @@
+.top-in {
+  background-image: image-url("material/pict/bg-appBanner-pict.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 500px;
+
+  &__contents {
+    width: 860px;
+    height: 500px;
+    margin: 0 auto;
+    display: flex;
+      flex-direction: row;
+
+    &__texts {
+      width: 410px;
+      margin-right: 150px;
+      align-self: center;
+
+      p {
+        color: #ffffff;
+        font-weight: bold;
+        text-align: center;
+        line-height: 3.0em;
+        margin: 0 auto;
+        display: block;
+      }
+
+      &--text1 {
+        font-size: 1.2rem;
+        text-shadow: 1px 1px 5px rgb(51, 51, 51);
+      }
+      &--text2 {
+        font-size: 2.0rem;
+        text-shadow: 1px 1px 5px rgb(51, 51, 51);
+      }
+
+      &--regist-btn {
+        background-color: lighten(#ff0000, 20%);
+        width: 300px;
+        height: 40px;
+        margin: 0 auto 50px;
+      
+        a {
+          width: 300px;
+          height: 30px;
+          color: #ffffff;
+          font-size: 1.0rem;
+          text-align: center;
+          line-height: 40px;
+          display: block;
+        }
+      }
+    }
+  }
+}

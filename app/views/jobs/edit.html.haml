@@ -1,0 +1,132 @@
+= render 'render/header'
+
+- if @job.errors.any?
+  .error-message
+    %ul{style: "color: red"}
+      - @job.errors.full_messages.each do |message|
+        %li= message
+.products
+  .products__main
+    = form_with model: @job, local: true do |form|
+      .products__main__box
+        .products__main__image
+          掲載用画像
+          .products__main__image__side  必須
+        .products__main__image__detail
+          最大5枚までアップロードできます
+        .post__drop__box__container
+          .prev-content
+            //JSで挿入したhtmlと同じ形 each文でのプレビュー表示
+            - @job.images.each do |image|
+              .preview-box
+                .upper-box
+                  = image_tag image.image.url, width: "112", height: "112", alt: "preview"
+                .lower-box
+                  .delete-box
+                    .delete-btn
+                      %span 削除
+          .label-content
+
+            //プレビューの数に合わせてforオプションを指定
+            = form.label :"images_attributes_#{@job.images.length}_image", class: "label-box", id: "label-box--#{@job.images.length}" do
+              %pre.label-box__text-visible クリックしてファイルをアップロード
+          .hidden-content
+            = form.fields_for :images do |i|
+
+              //プレビューが出ている分のfile_fieldとdelete用のチェックボックスを設置
+              = i.file_field :image, class: "hidden-field"
+              = i.check_box:_destroy, class: "hidden-checkbox"
+
+              //5つのfile_fieldを準備するに当たって、足りない分を表示
+            - @job.images.length.upto(4) do |i|
+              %input{name: "job[images_attributes][#{i}][image]", id: "job_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
+
+      .products__main__box2
+        .products__main__name
+          企業名
+          %span  必須
+          = form.text_field :company_name, class: 'products__main__name__box'
+        .products__main__name
+          記事欄
+          %span  必須
+          = form.text_field :job_description, class: 'products__main__name__box'
+      .products__detail
+        条件面について
+      .products__main__box3
+        .products__detail__category
+          職種
+          %span 必須
+          .products__main__name__box
+        .products__main__name
+          掲載終了日
+          .products__detail__brand__side
+          %span 必須
+          = form.date_field :Posting_end_date, class: 'products__main__name__box'
+        .products__detail
+          応募方法について
+        .products__main__name
+          応募資格
+          .products__detail__brand__side
+          %span 必須
+          = form.text_field :qualification, class: 'products__main__name__box'
+        .products__main__name
+          雇用形態
+          %span  必須
+          = form.collection_select :Employment_Status, EmploymentStatus.all, :id, :name, class: 'products__detail__status__box'
+        .products__main__name
+          給与
+          .products__detail__brand__side
+          %span 必須
+          = form.text_field :salary, class: 'products__main__name__box'
+        .products__main__name
+          待遇、福利厚生
+          .products__detail__brand__side
+          %span 必須
+          = form.text_field :treatment, class: 'products__main__name__box'
+        .products__main__name
+          勤務時間
+          .products__detail__brand__side
+          %span 必須
+          = form.text_field :working_hours, class: 'products__main__name__box'
+        .products__main__name
+          休日
+          .products__detail__brand__side
+          %span 必須
+          = form.text_field :holiday, class: 'products__main__name__box'
+        .products__main__name
+          勤務地
+          .products__detail__brand__side
+          %span 必須
+          = form.text_field :work_location, class: 'products__main__name__box'
+        .products__main__name
+          応募方法
+          .products__detail__brand__side
+          %span 必須
+          = form.text_field :application_method, class: 'products__main__name__box'
+        .products__main__name
+          お問い合わせ先について
+          .products__detail__brand__side
+          %span 必須
+          = form.text_field :contact, class: 'products__main__name__box'
+        .products__main__name
+          所在地
+          .products__detail__brand__side
+          %span 必須
+          = form.text_field :location, class: 'products__main__name__box'
+        .products__main__name
+          担当者名
+          .products__detail__brand__side
+          %span 必須
+          = form.text_field :contact_name, class: 'products__main__name__box'
+        .products__main__name
+          HPアドレス
+          .products__detail__brand__side
+          %span 必須
+          = form.text_field :hp_address, class: 'products__main__name__box'
+      .products__main__box6
+        .products__sell
+          = form.submit "編集する", class: 'products__sell__contents__btn--syutten'
+        .products__back
+          = link_to "/", class: "products__sell__contents__btn--back" do
+            もどる
+  = render 'render/footer'

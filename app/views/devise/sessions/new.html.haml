@@ -1,0 +1,32 @@
+= render partial: "render/header"
+
+.sign-in
+  .sign-in__contents
+    .sign-in__contents__texts
+      %p
+        %span.sign-in__contents__texts--text1 求人情報満載！
+        %br
+        %span.sign-in__contents__texts--text2 新規会員登録はこちら！
+      -# 新規登録ボタンのブロック要素
+      .sign-in__contents__texts--regist-btn
+        - if devise_mapping.registerable? && controller_name != 'registrations'
+          = link_to "新規会員登録", new_registration_path(resource_name)
+
+    -# メールアドレス＆パスワードフォームからログインボタンまでのブロック要素
+    .sign-in__contents__login-form
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |form|
+        = form.email_field :email, class: 'sign-in__contents__login-form--email', placeholder: 'メールアドレス', autofocus: true, autocomplete: "email"
+
+        -# パスワード関連の３要素を含む ブロック要素
+        .sign-in__contents__login-form__password
+          = form.password_field :password, class: 'sign-in__contents__login-form__password--form', placeholder: 'パスワード', autocomplete: "current-password"
+
+          -# "情報を記憶する" チェックボックス
+          - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+            - if devise_mapping.rememberable?
+              = form.check_box :remember_me
+              = form.label :remember_me, '情報を記憶する'
+            = link_to "パスワードを忘れた方ははこちら", new_password_path(resource_name), class: 'sign-in__contents__login-form__password--forget'
+        = form.submit "ログイン", class: 'sign-in__contents__login-form--submit'
+
+= render partial: "render/footer"

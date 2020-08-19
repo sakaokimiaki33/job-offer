@@ -1,0 +1,19 @@
+%wrapper
+  %table
+    %thead
+      %tr
+        %th 雇用形態
+        %th 企業名
+        %th 仕事内容
+        %th 掲載開始日
+        %th 掲載終了日
+        %th 状態
+    %tbody
+      - @jobs.each do |job|
+        %tr
+          %td.employment_status_id= job.employment.name
+          %td.company_name= current_user.company_name
+          %td.job_description= job.job_description
+          %td.Posting_start_date= job.Posting_start_date
+          %td.Posting_end_date= job.Posting_end_date
+          %td 募集中
