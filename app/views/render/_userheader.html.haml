@@ -3,9 +3,9 @@
     .header__search__title
       = link_to root_path do
         %p JOB-OFFER
-    %form.header__search__form
-      %input{type: 'search', class: 'header__search__form__input', placeholder: '検索するキーワードを入力して下さい。'}
-      %input{type: 'search', class: 'header__search__form__input', placeholder: '勤務地'}
-      %input{type: 'search', class: 'header__search__form__input', placeholder: '職種'}
-      = button_tag type: 'submit', class: 'header__search__form__submit' do
-        -# = image_tag 'material/icon/icon-search1.png', class: 'header__search__form__submit--image'
+      = form_with(url: search_jobs_path, local: true, method: :get, class: "search-form") do |form|
+        = form.text_field :keyword, placeholder: "キーワードを検索する", class: "search-input"
+        = form.submit "検索", class: "search-btn"
+      .contents.row
+        - @jobs.each do |job|
+          -# = render partial: "middle", locals: { job: job }

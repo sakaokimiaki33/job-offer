@@ -3,17 +3,21 @@
     %thead
       %tr
         %th 雇用形態
-        %th 職種
         %th 企業名
+        %th 職種
+        %th 仕事内容
         %th 勤務地
         %th 給与
-        %th 詳細
+        %th 掲載終了日
     %tbody
-      %tr
-        %td 正社員 
-        %td プリグラマー
-        %td フリープランニング
-        %td 京都市南区
-        %td 24万〜
-        %td= link_to "詳細 ", '#'
+      - @jobs.each do |job|
+        %tr
+          %td.employment_status_id= job.employment.name
+          %td.company_name= current_user.company_name
+          %td 営業
+          %td.job_description= job.job_description
+          %td.work_location= job.work_location
+          %td.salary= job.salary
+          %td.Posting_end_date= job.Posting_end_date
+
       
