@@ -12,6 +12,14 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
 
+  def self.search(search)
+    if search
+      Job.where(['company_name LIKE ?', "%#{search}%"])
+    else
+      Job.all
+    end
+  end
+
   has_one :address, inverse_of: :user, dependent: :destroy
   accepts_nested_attributes_for :address
     # 親モデルで "accepts_nested_attributes_for :子モデル名" を定義することでフォームから送信した値を親と子のテーブルに同時に保存する。

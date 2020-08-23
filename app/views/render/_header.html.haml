@@ -6,9 +6,6 @@
       = form_with(url: search_jobs_path, local: true, method: :get, class: "search-form") do |form|
         = form.text_field :keyword, placeholder: "キーワードを検索する", class: "search-input"
         = form.submit "検索", class: "search-btn"
-      .contents.row
-        - @jobs.each do |job|
-          -# = render partial: "middle", locals: { job: job }
 
   .header__menu
     .header__menu__category

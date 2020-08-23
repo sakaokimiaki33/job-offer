@@ -15,7 +15,7 @@ class JobsController < ApplicationController
 
   def search
     #Viewのformで取得したパラメータをモデルに渡す
-    @jobs = Joc.search(params[:search])
+    @jobs = Job.search(params[:keyword])
   end
 
   def new

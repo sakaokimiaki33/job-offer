@@ -9,4 +9,9 @@ class ToppagesController < ApplicationController
     @jobs = current_user.jobs
   end
 
+  def search
+    #Viewのformで取得したパラメータをモデルに渡す
+    @jobs = Job.search(params[:keyword])
+  end
+
 end
