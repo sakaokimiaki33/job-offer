@@ -2,7 +2,7 @@ class UsertoppageController < ApplicationController
 
   def index
     @jobs = Job.all.order('id DESC').limit(30)
-    # @company_name = current_user.company_name
+    @company_name = current_user.company_name
     # @job = Job.find(params[:id])
     # @job = current_user.job
     # @user = User.find(current_user.id)

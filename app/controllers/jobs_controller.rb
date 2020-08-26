@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_job,only: [:show]
   before_action :move_to_signin, except: [:index, :edit, :update]
+  # before_action :set_job,only: [:show]
   before_action :limit_editer, only: [:edit, :update]
   before_action :move_to_index, except: [:index, :show, :search]
 
@@ -27,7 +27,7 @@ class JobsController < ApplicationController
   def create
     @job = Job.new(job_params)
     if @job.save
-      redirect_to root_path notice: "登録に成功しました"
+      redirect_to toppages_path notice: "登録に成功しました"
     else
       @job.images.new
       render :new
