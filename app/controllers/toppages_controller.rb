@@ -6,7 +6,7 @@ class ToppagesController < ApplicationController
 
   def index
     # @jobs = Job.all.order('id DESC').limit(30)
-    # @company_name = current_user.company_name
+    @company_name = current_user.company_name
     # @job = Job.find(params[:id])
     @jobs = current_user.jobs
   end
