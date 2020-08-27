@@ -17,6 +17,12 @@ Rails.application.routes.draw do
       get :search
     end
   end
+
+  resources :toppages, except: :show do
+    collection do
+      get :search
+    end
+  end
   
   resources :mypage, only:[:index, :new]
 end

@@ -13,7 +13,7 @@
       - @jobs.each do |job|
         %tr
           %td.employment_status_id= job.employment.name
-          %td.company_name= current_user.company_name
+          %td.company_name= job.user.company_name
           %td 営業
           %td.job_description= job.job_description
           %td.work_location= job.work_location
