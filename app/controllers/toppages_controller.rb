@@ -1,8 +1,6 @@
 class ToppagesController < ApplicationController
   before_action :authenticate_user!
   before_action :move_to_signin, except: [:index, :edit, :update]
-  # before_action :set_job,only: [:show]
-  before_action :move_to_index, except: [:index, :show, :search]
 
   def index
     # @jobs = Job.all.order('id DESC').limit(30)
@@ -22,8 +20,5 @@ class ToppagesController < ApplicationController
     redirect_to '/users/sign_in' unless user_signed_in?
   end
 
-  def move_to_index
-    redirect_to action: :index unless user_signed_in?
-  end
   
 end

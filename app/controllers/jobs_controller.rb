@@ -1,9 +1,7 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :move_to_signin, except: [:index, :edit, :update]
-  # before_action :set_job,only: [:show]
   before_action :limit_editer, only: [:edit, :update]
-  before_action :move_to_index, except: [:index, :show, :search]
 
   def search
     #Viewのformで取得したパラメータをモデルに渡す
@@ -65,10 +63,6 @@ class JobsController < ApplicationController
     unless Job.find(params[:id]).start_id.to_i == current_user.id
       redirect_to root_path
     end
-  end
-
-  def move_to_index
-    redirect_to action: :index unless user_signed_in?
   end
   
 end
