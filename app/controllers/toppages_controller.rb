@@ -17,14 +17,6 @@ class ToppagesController < ApplicationController
   end
 
   private
-  
-  def job_params
-    params.require(:job).permit(:occupation, :Posting_start_date, :Posting_end_date, :employment_id, :job_description, :qualification, :salary, :treatment, :working_hours, :holiday, :work_location, :application_method, :contact, :location, :phone, :contact_name, :hp_address, :stop_id, :end_id, images_attributes: [:image]).merge(user_id: current_user.id, start_id: current_user.id)
-  end
-
-  def job_update_params
-    params.require(:job).permit(:occupation, :Posting_start_date, :Posting_end_date, :employment_id, :job_description, :qualification, :salary, :treatment, :working_hours, :holiday, :work_location, :application_method, :contact, :location, :phone, :contact_name, :hp_address, :stop_id, :end_id, images_attributes:[:image, :_destroy, :id])
-  end
 
   def move_to_signin
     redirect_to '/users/sign_in' unless user_signed_in?
