@@ -179,7 +179,7 @@ table tr:last-child td:last-child {
 }
 
 .footer{
-  height: 200px;
+  height: 250px;
   width: 100%;
   background-color: rgb(91, 151, 201);
   position: relative;
@@ -208,11 +208,11 @@ table tr:last-child td:last-child {
     display: flex;
     justify-content: center;
   }
-  p{
+  span{
     color: $font-color;
     padding-top: 3px;
     justify-content: center;
-    display: flex;
+    // display: flex;
     font-size: 14px;
   }
 }
@@ -238,9 +238,8 @@ table tr:last-child td:last-child {
 
 .wrapper {
   width: 100%;
-  max-width: 1360px;
   font-size: 16px;
-  padding: 16px 40px;
+  padding: 16px 0px;
   margin: 0 auto;
   background-color: gray;
 
