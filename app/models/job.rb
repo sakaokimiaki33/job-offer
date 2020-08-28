@@ -13,7 +13,7 @@ class Job < ApplicationRecord
 
   def self.search(search)
     if search
-      Job.where(['working_hours LIKE ?', "%#{search}%"])
+      Job.where(['job_description LIKE ?', "%#{search}%"])
     else
       Job.all
     end
