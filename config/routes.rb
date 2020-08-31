@@ -6,21 +6,24 @@ Rails.application.routes.draw do
   resources :usertoppage,only:[:index]
   resources :users, only: [:show, :edit, :update, :destroy]
   
-  resources :jobs, except: :show do
+  resources :jobs do
     collection do
       get :search
+      get 'show', to: 'jobs#show'
     end
   end
 
-  resources :usertoppage, except: :show do
+  resources :usertoppage do
     collection do
       get :search
+      get 'show', to: 'jobs#show'
     end
   end
 
-  resources :toppages, except: :show do
+  resources :toppages do
     collection do
       get :search
+      get 'show', to: 'jobs#show'
     end
   end
   
