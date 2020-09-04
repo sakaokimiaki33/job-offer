@@ -8,11 +8,11 @@
         %th 仕事内容
         %th 掲載開始日
         %th 掲載終了日
-        -# %th 状態
+        %th 状態
     %tbody
       - @jobs.each do |job|
         %tr
-          -# %td = link_to 'Show', job
+          %td= link_to "詳細", job_path(job)
           %td.employment_status_id= job.employment.name
           %td.company_name= current_user.company_name
           %td.job_description= job.job_description

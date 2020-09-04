@@ -15,10 +15,9 @@ class JobsController < ApplicationController
   end
 
   def create
-    binding.pry
     @job = Job.new(job_params)
     if @job.save
-      redirect_to search_toppages_path notice: "登録に成功しました"
+      redirect_to toppages_path notice: "登録に成功しました"
     else
       @job.images.new
       render :new
@@ -27,6 +26,7 @@ class JobsController < ApplicationController
   end
 
   def show
+    # binding.pry
     @job = Job.find(params[:id])
   end
 

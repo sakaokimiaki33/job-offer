@@ -24,75 +24,75 @@
     .products__main__box2
       .products__main__name
         企業名
-        = @company_name
+        = @current_user.company_name
     .products__main__box3
       .products__detail__category
         職種
-        = @occupation
+        = @job.occupation
       .products__main__name
         仕事内容
-        = @job_description
+        = @job.job_description
       .products__main__name
         掲載開始日
         .products__detail__brand__side 
-          = @Posting_start_date
+          = @job.Posting_start_date
       .products__main__name
         掲載終了日
         .products__detail__brand__side 
-          = @Posting_end_date
+          = @job.Posting_end_date
       .products__main__name
         応募資格
         .products__detail__brand__side
-          = @qualification
+          = @job.qualification
       .products__main__name
         雇用形態
-        = @employment_id
+        = @job.employment_id
       .products__main__name
         給与
         .products__detail__brand__side
-          = @salary
+          = @job.salary
       .products__main__name
         待遇、福利厚生
         .products__detail__brand__side
-          = @treatment
+          = @job.treatment
       .products__main__name
         勤務時間
         .products__detail__brand__side
-          = @working_hours
+          = @job.working_hours
       .products__main__name
         休日
         .products__detail__brand__side
-          = @holiday
+          = @job.holiday
       .products__main__name
         勤務地
         .products__detail__brand__side
-          = @work_location
+          = @job.work_location
       .products__main__name
         応募方法
         .products__detail__brand__side
-          = @application_method
+          = @job.application_method
       .products__main__name
         会社アピール
         .products__detail__brand__side
-          = @contact
+          = @job.contact
       .products__detail
         お問い合わせ先について
       .products__main__name
         所在地
         .products__detail__brand__side
-          = @location
+          = @job.location
       .products__main__name
         電話番号
         .products__detail__brand__side
-          = @phone
+          = @job.phone
       .products__main__name
         担当者名
         .products__detail__brand__side
-          = @contact_name
+          = @job.contact_name
       .products__main__name
         HPアドレス
         .products__detail__brand__side
-          = @hp_address
+          = @job.hp_address
       .products__main__box6
         .products__sell
           = link_to "編集", edit_job_path
