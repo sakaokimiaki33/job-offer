@@ -10,7 +10,7 @@
       -# 新規登録ボタンのブロック要素
       .sign-in__contents__texts--regist-btn
         - if devise_mapping.registerable? && controller_name != 'registrations'
-          = link_to "新規会員登録", new_user_registration_path(resource_name)
+          = link_to "新規会員登録", new_registration_path(resource_name)
 
     -# メールアドレス＆パスワードフォームからログインボタンまでのブロック要素
     .sign-in__contents__login-form
