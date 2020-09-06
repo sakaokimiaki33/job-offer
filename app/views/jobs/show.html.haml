@@ -24,80 +24,84 @@
     .products__main__box2
       .products__main__name
         企業名
-        = @current_user.company_name
+        %user.products__main__name__box
+          = @current_user.company_name
     .products__main__box3
-      .products__detail__category
+      .products__main__name
         職種
-        = @job.occupation
+        .products__main__name__box
+          = @job.occupation
       .products__main__name
         仕事内容
-        = @job.job_description
+        .products__main__name__box
+          = @job.job_description
       .products__main__name
         掲載開始日
-        .products__detail__brand__side 
+        .products__main__name__box
           = @job.Posting_start_date
       .products__main__name
         掲載終了日
-        .products__detail__brand__side 
+        .products__main__name__box
           = @job.Posting_end_date
       .products__main__name
         応募資格
-        .products__detail__brand__side
+        .products__main__name__box
           = @job.qualification
       .products__main__name
         雇用形態
-        = @job.employment_id
+        .products__detail__status__box
+          = @job.employment.name
       .products__main__name
         給与
-        .products__detail__brand__side
+        .products__detail__status__box
           = @job.salary
       .products__main__name
         待遇、福利厚生
-        .products__detail__brand__side
+        .products__detail__status__box
           = @job.treatment
       .products__main__name
         勤務時間
-        .products__detail__brand__side
+        .products__detail__status__box
           = @job.working_hours
       .products__main__name
         休日
-        .products__detail__brand__side
+        .products__detail__status__box
           = @job.holiday
       .products__main__name
         勤務地
-        .products__detail__brand__side
+        .products__detail__status__box
           = @job.work_location
       .products__main__name
         応募方法
-        .products__detail__brand__side
+        .products__detail__status__box
           = @job.application_method
       .products__main__name
         会社アピール
-        .products__detail__brand__side
+        .products__detail__status__box
           = @job.contact
-      .products__detail
-        お問い合わせ先について
+    .products__detail
+      お問い合わせ先について
       .products__main__name
         所在地
-        .products__detail__brand__side
+        .products__detail__status__box
           = @job.location
       .products__main__name
         電話番号
-        .products__detail__brand__side
+        .products__detail__status__box
           = @job.phone
       .products__main__name
         担当者名
-        .products__detail__brand__side
+        .products__detail__status__box
           = @job.contact_name
       .products__main__name
         HPアドレス
-        .products__detail__brand__side
+        .products__detail__status__box
           = @job.hp_address
       .products__main__box6
         .products__sell
           = link_to "編集", edit_job_path
           = link_to "削除", "/jobs/#{@job.id}", method: :delete, class: "product__detail__delete"
         .products__back
-          = link_to "/", class: "products__sell__contents__btn--back" do
+          = link_to toppages_path, class: "products__sell__contents__btn--back" do
             もどる  
 = render 'render/footer'
