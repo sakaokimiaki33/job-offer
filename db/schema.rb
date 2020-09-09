@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_09_09_092819) do
 
   create_table "jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "occupation", null: false
-    t.integer "Posting_end_date", null: false
+    t.date "Posting_end_date", null: false
     t.string "employment_id", null: false
     t.text "job_description", null: false
     t.text "qualification", null: false
