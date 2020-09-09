@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2020_09_09_092819) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "company_name_deliver", default: ""
-    t.bigint "postal_code", null: false
+    t.bigint "text", null: false
     t.string "prefecture", null: false
     t.string "city", null: false
     t.string "block", null: false
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2020_09_09_092819) do
     t.text "application_method", null: false
     t.string "contact", null: false
     t.string "location", null: false
-    t.bigint "phone", null: false
+    t.bigint "text", null: false
     t.string "hp_address"
     t.text "start_id", null: false
     t.text "stop_id"
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 2020_09_09_092819) do
     t.string "staff_name_kana", null: false
     t.string "URL"
     t.bigint "faxphone"
-    t.bigint "phone", null: false
+    t.bigint "text", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
