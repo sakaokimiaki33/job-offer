@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2020_09_09_092819) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "Posting_start_date", null: false
+    t.date "Posting_start_date", null: false
     t.string "contact_name"
     t.index ["user_id"], name: "index_jobs_on_user_id"
   end

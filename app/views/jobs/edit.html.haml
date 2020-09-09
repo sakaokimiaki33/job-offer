@@ -44,8 +44,8 @@
       .products__main__box2
         .products__main__name
           企業名
-          %span  必須
-          = form.text_field :company_name, class: 'products__main__name__box'
+          %user.products__main__name__box
+            = current_user.company_name
         .products__main__name
           記事欄
           %span  必須
@@ -56,7 +56,16 @@
         .products__detail__category
           職種
           %span 必須
-          .products__main__name__box
+          = form.text_field :occupation, class: 'products__main__name__box'
+        .products__main__name
+          仕事内容
+          %span  必須ではありませんが応募を増やすために記載をお勧めしています
+          = form.text_field :job_description, class: 'products__main__name__box'
+        .products__main__name
+          掲載開始日
+          .products__detail__brand__side 
+          %span 必須
+          = form.date_field :Posting_start_date, class: 'products__main__name__box'
         .products__main__name
           掲載終了日
           .products__detail__brand__side
@@ -72,7 +81,7 @@
         .products__main__name
           雇用形態
           %span  必須
-          = form.collection_select :Employment_Status, EmploymentStatus.all, :id, :name, class: 'products__detail__status__box'
+          = form.collection_select :employment_id, Employment.all, :id, :name, class: 'products__detail__status__box'
         .products__main__name
           給与
           .products__detail__brand__side

@@ -25,6 +25,11 @@ class JobsController < ApplicationController
     end
   end
 
+  def show
+    # binding.pry
+    @job = Job.find(params[:id])
+  end
+
   def edit
     @job = Job.find(params[:id])
   end
@@ -39,6 +44,11 @@ class JobsController < ApplicationController
   end
 
   def destroy
+    job = Job.find(params[:id])
+    if job.start_id == current_user.id
+      job.destroy
+      redirect_to root_path
+    end
   end
 
   def search

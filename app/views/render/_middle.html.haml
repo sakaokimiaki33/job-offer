@@ -2,6 +2,7 @@
   %table
     %thead
       %tr
+        %th 設定
         %th 雇用形態
         %th 企業名
         %th 仕事内容
@@ -11,6 +12,7 @@
     %tbody
       - @jobs.each do |job|
         %tr
+          %td= link_to "詳細", job_path(job)
           %td.employment_status_id= job.employment.name
           %td.company_name= current_user.company_name
           %td.job_description= job.job_description
