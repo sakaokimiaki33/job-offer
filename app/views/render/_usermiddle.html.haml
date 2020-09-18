@@ -2,6 +2,7 @@
   %table
     %thead
       %tr
+        %th 詳細
         %th 雇用形態
         %th 企業名
         %th 職種
@@ -9,9 +10,11 @@
         %th 勤務地
         %th 給与
         %th 掲載終了日
+        %th 状態
     %tbody
       - @jobs.each do |job|
         %tr
+          %td= link_to "詳細", job_path(job)
           %td.employment_status_id= job.employment.name
           %td.company_name= job.user.company_name
           %td 営業
@@ -19,5 +22,6 @@
           %td.work_location= job.work_location
           %td.salary= job.salary
           %td.Posting_end_date= job.Posting_end_date
+          %td 募集中
 
       

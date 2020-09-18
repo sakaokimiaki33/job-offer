@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :usertoppage do
     collection do
       get :search
+      get "usertoppage/show"
     end
   end
 

@@ -136,6 +136,6 @@
         .products__sell
           = form.submit "編集する", class: 'products__sell__contents__btn--syutten'
         .products__back
-          = link_to "/", class: "products__sell__contents__btn--back" do
+          = link_to toppages_path , class: "products__sell__contents__btn--back" do
             もどる
   = render 'render/footer'

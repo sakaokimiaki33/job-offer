@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :move_to_signin, except: [:index, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :move_to_signin, only: [:new, :create, :edit, :update, :destroy]
   before_action :limit_editer, only: [:edit, :update]
 
   def search
@@ -26,8 +26,8 @@ class JobsController < ApplicationController
   end
 
   def show
-    # binding.pry
     @job = Job.find(params[:id])
+    # if user_signed_in? && current_user.id == @job.start_id
   end
 
   def edit
@@ -37,7 +37,7 @@ class JobsController < ApplicationController
   def update
     @job = Job.find(params[:id])
     if @job.update(job_update_params)
-      redirect_to root_path
+      redirect_to toppages_path 
     else
       render :edit
     end

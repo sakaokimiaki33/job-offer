@@ -14,8 +14,10 @@
         %tr
           %td= link_to "詳細", job_path(job)
           %td.employment_status_id= job.employment.name
-          %td.company_name= current_user.company_name
+          %td.company_name= job.user.company_name
           %td.job_description= job.job_description
           %td.Posting_start_date= job.Posting_start_date
           %td.Posting_end_date= job.Posting_end_date
           %td 募集中
+
+
